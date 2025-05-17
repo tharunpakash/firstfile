@@ -1,12 +1,15 @@
-// let a=33;
-// const age=90;
-//  let=a+33;
-//  age+3;
-// console.log(let)
-// console.log(age)
-// 
+
+const text=document.getElementById("text")
+const text1=document.getElementById("text1")
+const brand=document.getElementById("brand")
+const price=document.getElementById("price")
+const category=document.getElementById("category")
+const date=document.getElementById("date")
+const available=document.getElementById("available")
+const quantity=document.getElementById("quantity")
+
 const button=document.getElementById('btn')
-button .addEventListener('click',message)
+button.addEventListener('click',message)
    function message(){
       fetch('http://localhost:8080/api/products')
 .then(res=>res.json())
@@ -30,6 +33,7 @@ datas.forEach(data=>{
   fetch.appendChild(tr)
 })
 })  
+
 }
 
 const updatebtn=document.getElementById('update')
@@ -41,15 +45,14 @@ headers:{
   "Content-Type":"application/json"
 },
 body:JSON.stringify({
-  
-    name: "Bugatti",
-    desc: "A stylish SUV with advanced features and comfortable interior.",
-    brand: "Bugatti Horse",
-    price: 950000,
-    category: "Cars",
-    date: 3-11-2024,
-    available: true,
-    quantity: 70
+    name :text.value,
+    desc: text1.value,
+    brand: brand.value,
+    price: price.value,
+    category: category.value,
+    date: date.value,
+    available: available.value,
+    quantity:quantity.value
 })
 })
 .then(res=>res.json())
@@ -57,6 +60,8 @@ body:JSON.stringify({
   console.log(datas)
 })
 .catch(err=>console.log(err))
+console.log("hello")
+
 }
 function deleteproduct(productId){
   fetch("http://localhost:8080/api/product`${productId}`",{
@@ -76,4 +81,3 @@ function deleteproduct(productId){
   })
   .catch(err=>console.log(err))
 }
-
